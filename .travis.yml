@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk20
+  - openjdk11
 
 before_install:
   - chmod +x mvnw
