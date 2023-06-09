@@ -1,17 +1,11 @@
 language: java
-
 jdk:
   - openjdk20
 
-# Install dependencies
-install:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+before_install:
+  - chmod +x mvnw
 
-# Build and run tests
+install: true
+
 script:
-  - mvn test
-
-# Cache Maven dependencies to speed up build times
-cache:
-  directories:
-    - $HOME/.m2
+  - ./mvnw test
