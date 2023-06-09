@@ -1,1 +1,17 @@
 language: java
+
+jdk:
+  - openjdk11
+
+# Install dependencies
+install:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+# Build and run tests
+script:
+  - mvn test
+
+# Cache Maven dependencies to speed up build times
+cache:
+  directories:
+    - $HOME/.m2
